@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Button } from './ui/button';
+import { Menu, X, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '/' },
     { name: 'Features', href: '#features' },
     { name: 'How It Works', href: '#how-it-works' },
     { name: 'About Us', href: '#about' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Contact', href: '#contact' },
+    { name: 'Chatbot', href: '/chat' }
   ];
 
   return (
@@ -40,25 +42,45 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
-                whileHover={{ scale: 1.1 }}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                {item.name}
-              </motion.a>
+              item.href.startsWith("#") ? (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
+                  whileHover={{ scale: 1.1 }}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {item.name}
+                </motion.a>
+              ) : (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link
+                    to={item.href}
+                    className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              )
             ))}
           </nav>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-              Explore with AI
-            </Button>
+            <Link to="/chat">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                <MessageSquare className="w-4 h-4 mr-2" />
+                Explore with AI
+              </Button>
+            </Link>
             <Button className="bg-secondary hover:bg-secondary/90">
               Download App
             </Button>
@@ -83,19 +105,32 @@ const Header = () => {
           >
             <nav className="flex flex-col space-y-4 pt-4">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
+                item.href.startsWith("#") ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  Explore with AI
-                </Button>
+                <Link to="/chat">
+                  <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                    Explore with AI
+                  </Button>
+                </Link>
                 <Button className="bg-secondary hover:bg-secondary/90">
                   Download App
                 </Button>
