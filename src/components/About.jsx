@@ -36,7 +36,7 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '2024', label: 'Founded' },
+    { number: '2025', label: 'Founded' },
     { number: '20+', label: 'Cultural Sites' },
     { number: '5', label: 'Languages' },
     { number: '100%', label: 'Authentic Content' }
@@ -68,7 +68,7 @@ const About = () => {
     <section id="about" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Decorative Background Elements (Bhutanese Mural Style) */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-64 h-64">
+        <div className="absolute top-20 w-64 h-64">
           <div className="w-full h-full rounded-full border-4 border-primary flex items-center justify-center">
             <div className="w-32 h-32 rounded-full border-2 border-secondary flex items-center justify-center">
               <div className="w-16 h-16 rounded-full bg-accent"></div>

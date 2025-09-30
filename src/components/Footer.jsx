@@ -44,9 +44,9 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="w-12 h-12 rounded-full bhutan-gradient flex items-center justify-center">
+              {/* <div className="w-12 h-12 rounded-full bhutan-gradient flex items-center justify-center">
                 <span className="text-white font-bold text-xl">B</span>
-              </div>
+              </div> */}
               <div>
                 <h3 className="text-2xl font-bold bhutan-text-gradient">BhutanTour AI</h3>
                 <p className="text-gray-400">Discover Bhutan's Living Culture</p>
@@ -174,12 +174,10 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <p className="text-gray-400 text-sm">
-            © 2024 BhutanTour AI. Promoting Gross National Happiness through digital tourism.
+            © 2025 BhutanTour AI. Promoting Gross National Happiness through digital tourism.
           </p>
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
-            <span className="text-gray-400 text-sm">Made with</span>
-            <span className="text-red-500">❤️</span>
-            <span className="text-gray-400 text-sm">for Bhutan</span>
+            <span className="text-gray-400 text-sm">Made in Bhutan</span>
           </div>
         </motion.div>
       </div>

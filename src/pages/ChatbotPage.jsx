@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
+
 import { 
   Send, 
   MessageSquare, 
@@ -43,8 +45,8 @@ const ChatbotPage = () => {
   const recognitionRef = useRef(null);
 
   const genAI = new GoogleGenerativeAI(API_KEY);
-  const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-  const visionModel = genAI.getGenerativeModel({ model: 'gemini-pro-vision' });
+  const model = genAI.getGenerativeModel({ model: 'gemini-flash-lite-latest' });
+  const visionModel = genAI.getGenerativeModel({ model: 'gemini-flash-lite-latest' });
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -176,7 +178,7 @@ Please provide a helpful, friendly response about Bhutanese culture, travel, or 
       const response = await result.response;
       const text = response.text();
       
-      const aiMessage = { 
+           const aiMessage = { 
         text, 
         sender: 'ai', 
         timestamp: new Date(),
@@ -184,8 +186,7 @@ Please provide a helpful, friendly response about Bhutanese culture, travel, or 
       };
       setMessages((prevMessages) => [...prevMessages, aiMessage]);
       
-      // Speak the response
-      speakText(text);
+
       
     } catch (error) {
       console.error('Error communicating with Gemini API:', error);
@@ -283,7 +284,10 @@ Please provide a helpful, friendly response about Bhutanese culture, travel, or 
                           />
                         </div>
                       )}
-                      <p className="whitespace-pre-wrap leading-relaxed">{msg.text}</p>
+                     <div className="whitespace-pre-wrap leading-relaxed">
+  <ReactMarkdown>{msg.text}</ReactMarkdown>
+</div>
+
                       <div className="flex items-center justify-between mt-2">
                         <span className="text-xs opacity-70">
                           {formatTime(msg.timestamp)}
@@ -495,7 +499,6 @@ Please provide a helpful, friendly response about Bhutanese culture, travel, or 
                   </span>
                 )}
               </div>
-              <span>Powered by Gemini AI</span>
             </div>
           </div>
         </div>

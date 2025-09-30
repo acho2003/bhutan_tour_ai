@@ -35,39 +35,45 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Call Us',
-      content: '+975 2 123 456',
+      content: '+975 17 761 717',
       description: 'Available during Bhutan business hours'
     },
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      content: 'Thimphu, Bhutan',
-      description: 'Land of the Thunder Dragon'
-    }
+    // {
+    //   icon: MapPin,
+    //   title: 'Visit Us',
+    //   content: 'Thimphu, Bhutan',
+    //   description: 'Land of the Thunder Dragon'
+    // }
   ];
 
   const prayerFlagColors = ['#FFD700', '#DC143C', '#228B22', '#FFFFFF', '#FF6B35'];
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-      {/* Prayer Flag Animation at Top */}
-      <div className="absolute top-0 left-0 right-0 z-10">
-        <div className="flex">
-          {[...Array(30)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="w-8 h-6 prayer-flag-animation"
-              style={{ backgroundColor: prayerFlagColors[i % 5] }}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.6, 
-                delay: i * 0.05,
-              }}
-            />
-          ))}
-        </div>
-      </div>
+  {/* Prayer Flag Animation at Top */}
+  <div className="absolute top-0 left-0 right-0 z-10">
+    <div className="flex">
+      {[...Array(50)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="w-8 h-6 prayer-flag-animation"
+          style={{ backgroundColor: prayerFlagColors[i % 5] }}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ 
+            opacity: 1, 
+            y: [ -50, 50, -30, 50, 0 ]  // create a bouncing/floating effect
+          }}
+          transition={{ 
+            duration: 3,                 // slower, more noticeable
+            delay: i * 0.05, 
+            repeat: Infinity,            // keeps moving
+            repeatType: "loop", 
+            ease: "easeInOut"
+          }}
+        />
+      ))}
+    </div>
+  </div>
 
       <div className="container mx-auto px-4 pt-8">
         {/* Section Header */}

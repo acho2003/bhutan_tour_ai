@@ -9,7 +9,7 @@ const Hero = () => {
   const prayerFlagColors = ['#FFD700', '#DC143C', '#228B22', '#FFFFFF', '#FF6B35'];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+   <section id="home" className="relative min-h-screen flex items-start justify-center overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -107,14 +107,14 @@ const Hero = () => {
                 Explore with AI
               </Button>
             </Link>
-            <Button 
+            {/* <Button 
               size="lg" 
               variant="outline" 
               className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-semibold backdrop-blur-sm"
             >
               <Download className="w-5 h-5 mr-2" />
               Download App
-            </Button>
+            </Button> */}
           </motion.div>
 
           {/* Stats */}

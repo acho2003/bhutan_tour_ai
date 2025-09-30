@@ -26,18 +26,20 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.div 
-            className="flex items-center space-x-2"
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="w-10 h-10 rounded-full bhutan-gradient flex items-center justify-center">
-              <span className="text-white font-bold text-lg">B</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold bhutan-text-gradient">BhutanTour AI</h1>
-              <p className="text-xs text-gray-600">Discover Living Culture</p>
-            </div>
-          </motion.div>
+         <motion.div 
+  className="flex items-center space-x-2"
+  whileHover={{ scale: 1.05 }}
+>
+  {/* <div className="w-10 h-10 rounded-full bhutan-gradient flex items-center justify-center">
+    <span className="text-white font-bold text-lg">B</span>
+  </div> */}
+  {/* Title and tagline in one line */}
+  <div className="flex items-center space-x-2">
+    <h1 className="text-xl font-bold bhutan-text-gradient ">BhutanTour AI</h1>
+    <p className="text-sm text-gray-600">Discover Living Culture</p>
+  </div>
+</motion.div>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -81,9 +83,9 @@ const Header = () => {
                 Explore with AI
               </Button>
             </Link>
-            <Button className="bg-secondary hover:bg-secondary/90">
+            {/* <Button className="bg-secondary hover:bg-secondary/90">
               Download App
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -131,9 +133,9 @@ const Header = () => {
                     Explore with AI
                   </Button>
                 </Link>
-                <Button className="bg-secondary hover:bg-secondary/90">
+                {/* <Button className="bg-secondary hover:bg-secondary/90">
                   Download App
-                </Button>
+                </Button> */}
               </div>
             </nav>
           </motion.div>

@@ -186,7 +186,7 @@ const HowItWorks = () => {
               Experience the Magic Yourself
             </h3>
             <p className="text-gray-300 mb-6">
-              Download BhutanTour AI and start your journey into the heart of Bhutanese culture
+              Try BhutanTour AI and start your journey into the heart of Bhutanese culture
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button 
@@ -196,13 +196,13 @@ const HowItWorks = () => {
               >
                 Try Demo
               </motion.button>
-              <motion.button 
+              {/* <motion.button 
                 className="border border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-full font-semibold transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Download App
-              </motion.button>
+              </motion.button> */}
             </div>
           </div>
         </motion.div>
