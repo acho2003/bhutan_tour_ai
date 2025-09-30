@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle, Camera, Languages, Sparkles } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from './ui/card';
 
 const Features = () => {
   const features = [

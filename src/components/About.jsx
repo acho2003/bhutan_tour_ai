@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Globe, Users, Award, Sparkles } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from './ui/card';
 
 const About = () => {
   const values = [

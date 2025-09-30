@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Mail, Phone, MapPin, MessageCircle, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Button } from './ui/button';
+import { Card, CardContent } from './ui/card';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
