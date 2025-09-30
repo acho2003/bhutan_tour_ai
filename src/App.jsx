@@ -5,6 +5,7 @@ import Features from './components/Features'
 import HowItWorks from './components/HowItWorks'
 import About from './components/About'
 import Contact from './components/Contact'
+import Chatbot from './components/Chatbot'
 import './App.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <HowItWorks />
       <About />
       <Contact />
+      <Chatbot />
     </Layout>
   )
 }
