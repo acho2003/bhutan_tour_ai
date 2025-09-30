@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { Button } from './ui/button';
 import { Play, Download, Sparkles } from 'lucide-react';
 import tigersNestImage from '../assets/oLjWyyR2JoYM.jpg';
 
@@ -97,13 +98,15 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.3 }}
           >
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold mandala-glow group"
-            >
-              <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Explore with AI
-            </Button>
+            <Link to="/chat">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold mandala-glow group"
+              >
+                <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                Explore with AI
+              </Button>
+            </Link>
             <Button 
               size="lg" 
               variant="outline" 

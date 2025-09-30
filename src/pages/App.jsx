@@ -1,14 +1,15 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import Features from '../components/Features'
 import HowItWorks from '../components/HowItWorks'
 import About from '../components/About'
 import Contact from '../components/Contact'
-import Chatbot from '../services/Chatbot'
+import ChatbotPage from './ChatbotPage'
 import '../styles/App.css'
 
-function App() {
+function HomePage() {
   return (
     <Layout>
       <Hero />
@@ -16,8 +17,18 @@ function App() {
       <HowItWorks />
       <About />
       <Contact />
-      <Chatbot />
     </Layout>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/chat" element={<ChatbotPage />} />
+      </Routes>
+    </Router>
   )
 }
 
